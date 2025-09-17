@@ -1,0 +1,87 @@
+<div class="book-container">
+  <!-- Zone de déclenchement invisible à gauche -->
+  <div class="nav-trigger" (mouseenter)="showNavigation()" (mouseleave)="hideNavigation()"></div>
+
+  <!-- Navigation qui glisse depuis la gauche -->
+  <nav class="left-navigation" [class.visible]="isNavVisible" (mouseenter)="showNavigation()"
+    (mouseleave)="hideNavigation()">
+
+    <h1 class="portfolio-title">Menu</h1>
+    <div class="nav-buttons">
+      <button class="page-button" (click)="openPage('home')" [class.active]="currentPage === 'home'">
+        <span class="page-number">01</span>
+        <span class="page-title">Accueil</span>
+      </button>
+      <button class="page-button" (click)="openPage('about')" [class.active]="currentPage === 'about'">
+        <span class="page-number">02</span>
+        <span class="page-title">À propos</span>
+      </button>
+      <button class="page-button" (click)="openPage('skills')" [class.active]="currentPage === 'skills'">
+        <span class="page-number">03</span>
+        <span class="page-title">Compétences</span>
+      </button>
+      <button class="page-button" (click)="openPage('projects')" [class.active]="currentPage === 'projects'">
+        <span class="page-number">04</span>
+        <span class="page-title">Projets</span>
+      </button>
+      <button class="page-button" (click)="openPage('contact')" [class.active]="currentPage === 'contact'">
+        <span class="page-number">05</span>
+        <span class="page-title">Contact</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-indicator" [class.visible]="!isNavVisible">
+    <div class="indicator-line"></div>
+    <span class="indicator-text">Menu</span>
+  </div>
+
+  <header class="page-header">
+    <div class="header-content">
+      <div class="logo-section">
+        <img src="assets/mon-logo.png" alt="Logo" class="w-10 h-10 rounded-full shadow-lg border border-white/20">
+        <h1 class="header-name">Michel Lheriteau</h1>
+      </div>
+    </div>
+  </header>
+
+  <button class="close-page-button" (click)="closePage()" *ngIf="isPageOpen">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  </button>
+
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<footer class="page-footer">
+  <div class="footer-content">
+    <p class="footer-text">2025 - Tous droits réservés</p>
+    <div class="footer-links">
+      <a href="https://github.com/votre-username" target="_blank" class="footer-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/votre-profil" target="_blank" class="footer-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<div class="page-shadow" [class.visible]="isPageOpen"></div>
