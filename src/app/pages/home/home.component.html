@@ -1,0 +1,55 @@
+<!-- section -->
+<section class="flex flex-col items-center justify-center text-center px-6">
+  <h1 class="text-4xl md:text-6xl font-bold mb-4">Michel Lheriteau</h1>
+  <h2 class="text-xl md:text-2xl text-gray-400 mb-6 underline">Développeur Front-End Angular</h2>
+  <p class="max-w-2xl text-gray-300 mb-8">
+    Je conçois des interfaces modernes, performantes et accessibles pour offrir la meilleure expérience utilisateur.
+  </p>
+  <button
+    (click)="goToProjects()"
+    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all">
+    Voir mes projets
+  </button>
+</section>
+
+<!-- Présentation -->
+<section class="text-center px-6 py-12 bg-gray-900/40 backdrop-blur-md rounded-xl shadow-lg mx-4 md:mx-auto max-w-4xl">
+  <p class="text-lg text-gray-200">
+    Passionné par le développement web, je crée des applications front-end en Angular et TypeScript,
+    avec une attention particulière à l’accessibilité et à l’expérience utilisateur.
+  </p>
+</section>
+
+<!-- Main skills -->
+<section class="py-16 px-6">
+  <h3 class="text-2xl font-bold text-center mb-8">Compétences principales</h3>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+      <img src="assets/logo_Angular.png" alt="Angular" class="w-12 mx-auto mb-2" />
+      <p>Angular</p>
+    </div>
+    <div>
+      <img src="assets/logo_TypeScript.png" alt="TypeScript" class="w-12 mx-auto mb-2" />
+      <p>TypeScript</p>
+    </div>
+    <div>
+      <img src="assets/logo_tailwind.png" alt="Tailwind CSS" class="w-12 mx-auto mb-2" />
+      <p>Tailwind CSS</p>
+    </div>
+    <div>
+      <img src="assets/logo_GitHub.png" alt="GitHub" class="w-12 mx-auto mb-2" />
+      <p>GitHub</p>
+    </div>
+  </div>
+</section>
+
+<!-- Call To Action -->
+<section class="text-center py-16">
+  <p class="text-xl mb-3">Vous avez un projet ? Discutons-en !</p>
+
+<button
+  (click)="goToContact()"
+  class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-all">
+  Me contacter
+</button>
+</section>

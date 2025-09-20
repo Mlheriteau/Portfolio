@@ -1,0 +1,36 @@
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  padding: 0 5rem;
+  flex-wrap: wrap;
+}
+
+.skills-left, .skills-right {
+  flex: 0 1 45%;
+  min-width: 300px;
+}
+
+.skills-left {
+  border-right: 2px solid rgba(255, 255, 255, 0.3); 
+  padding-right: 2rem;
+}
+
+.skills-right {
+  padding-left: 2rem;
+}
+
+.skills-container h1 {
+  color: #ffffff;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  text-decoration: underline;
+}
+
+.skills-container p {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}

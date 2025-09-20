@@ -1,4 +1,4 @@
-// src/app/app.ts
+// Root component of the Angular application
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
