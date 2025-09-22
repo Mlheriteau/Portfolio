@@ -1,4 +1,4 @@
-/* Main container */
+// MAIN CONTAINER //
 .book-container {
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   position: relative;
 }
 
-/* Invisible trigger zone on the left */
+// LEFT NAVIGATION (DESKTOP) //
 .nav-trigger {
   position: absolute;
   left: 0;
@@ -19,7 +19,6 @@
   background: transparent;
 }
 
-/* Navigation menu */
 .left-navigation {
   position: absolute;
   left: -300px;
@@ -99,7 +98,16 @@
     color: #ecf0f1;
     transform: translateX(10px);
   }
+
+// Icon size (desktop same as mobile) //
+  .icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 0.2rem;
+    flex-shrink: 0; // prevents the icon from shrinking
+  }
 }
+
 
 .page-number {
   background: rgba(255, 255, 255, 0.1);
@@ -115,7 +123,7 @@
   font-size: 1.1rem;
 }
 
-/* Menu indicator */
+// NAV INDICATOR //
 .nav-indicator {
   position: absolute;
   left: 0;
@@ -151,7 +159,6 @@
   }
 }
 
-/* Header */
 .page-header {
   position: absolute;
   top: 0;
@@ -188,7 +195,6 @@
   }
 }
 
-/* MAIN scrollable */
 .main-content {
   flex: 1;
   overflow-y: auto;
@@ -210,7 +216,6 @@
   }
 }
 
-/* Footer */
 .page-footer {
   flex-shrink: 0;
   background: linear-gradient(135deg, rgba(44, 62, 80, 0.947), rgba(52, 73, 94, 0));
@@ -221,7 +226,7 @@
   align-items: center;
 
   .footer-left-spacer {
-    width: 130px;
+    width: 240px;
   }
 
   .footer-text {
@@ -280,6 +285,7 @@
   }
 }
 
+// SHADOW (desktop only) //
 .page-shadow {
   position: absolute;
   top: 0;
@@ -293,5 +299,69 @@
 
   &.visible {
     opacity: 1;
+  }
+}
+
+.bottom-navigation {
+  display: none;
+    .page-button {
+    .icon {
+      width: 22px;
+      height: 22px;
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide the entire side menu and its elements on mobile */
+  .left-navigation,
+  .nav-trigger,
+  .nav-indicator,
+  .page-shadow {
+    display: none !important;
+  }
+
+  .bottom-navigation {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    justify-content: space-evenly;
+    padding: 0.3rem 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+
+    .page-button {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 500;
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      padding: 0.2rem 0;
+      gap: 0.1rem;
+
+      transition: color 0.2s ease, transform 0.2s ease;
+
+      .icon {
+        width: 18px;
+        height: 18px;
+        margin-bottom: 0.1rem;
+      }
+
+      &:hover {
+        color: #000000;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        color: #a78bfa;
+      }
+    }
   }
 }

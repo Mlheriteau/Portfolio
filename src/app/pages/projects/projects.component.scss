@@ -20,32 +20,104 @@
 .project {
   flex: 0 1 45%;
   min-width: 300px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  text-align: center;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(124, 77, 255, 0.5);
   }
+
+.project-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
   h2 {
     color: #ffffff;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h4 {
+    color: #a29bfe;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .status {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ff9f43;
+    background: rgba(255, 159, 67, 0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
     margin-bottom: 1rem;
   }
 
   p {
-    font-size: 1.2rem;
-    color: #ffffff;
+    font-size: 1.1rem;
+    color: #dfe6e9;
     line-height: 1.5;
     margin-bottom: 1rem;
   }
 
   h3 {
     color: #74b9ff;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-top: 0.5rem;
+  }
+
+  .project-links {
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    .btn-link {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      background: #6c5ce7;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #a29bfe;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// Responsive Design //
+@media (max-width: 1200px) {
+  .project {
+    flex: 0 1 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project {
+    flex: 0 1 100%;
+  }
+
+  .projects-container {
+    gap: 2rem;
+    padding: 0 1rem;
   }
 }

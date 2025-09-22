@@ -5,26 +5,40 @@
     (mouseleave)="hideNavigation()">
     <h1 class="portfolio-title">Menu</h1>
     <div class="nav-buttons">
-      <button class="page-button" (click)="openPage('home')" [class.active]="currentPage === 'home'">
-        <span class="page-number">01</span>
-        <span class="page-title">Accueil</span>
-      </button>
-      <button class="page-button" (click)="openPage('about')" [class.active]="currentPage === 'about'">
-        <span class="page-number">02</span>
-        <span class="page-title">À propos</span>
-      </button>
-      <button class="page-button" (click)="openPage('skills')" [class.active]="currentPage === 'skills'">
-        <span class="page-number">03</span>
-        <span class="page-title">Compétences</span>
-      </button>
-      <button class="page-button" (click)="openPage('projects')" [class.active]="currentPage === 'projects'">
-        <span class="page-number">04</span>
-        <span class="page-title">Projets</span>
-      </button>
-      <button class="page-button" (click)="openPage('contact')" [class.active]="currentPage === 'contact'">
-        <span class="page-number">05</span>
-        <span class="page-title">Contact</span>
-      </button>
+    <button class="page-button" (click)="openPage('home')" [class.active]="currentPage === 'home'">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3l9 8h-3v9h-12v-9h-3l9-8z"/>
+      </svg>
+      <span class="page-title">Accueil</span>
+    </button>
+
+    <button class="page-button" (click)="openPage('about')" [class.active]="currentPage === 'about'">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      <span class="page-title">À propos</span>
+    </button>
+
+    <button class="page-button" (click)="openPage('skills')" [class.active]="currentPage === 'skills'">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22.7 19.3l-5.6-5.6a7.1 7.1 0 01-9.8-9.8l5.6 5.6 2.8-2.8-5.6-5.6a7.1 7.1 0 019.8 9.8l5.6 5.6-2.8 2.8z"/>
+      </svg>
+      <span class="page-title">Compétences</span>
+    </button>
+
+    <button class="page-button" (click)="openPage('projects')" [class.active]="currentPage === 'projects'">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 4l2 2h8a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h6z"/>
+      </svg>
+      <span class="page-title">Projets</span>
+    </button>
+
+    <button class="page-button" (click)="openPage('contact')" [class.active]="currentPage === 'contact'">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4a2 2 0 00-2 2v0.01l10 6.99 10-6.99V6a2 2 0 00-2-2zm0 4.24l-8.12 5.67a1 1 0 01-1.16 0L4 8.24V18a2 2 0 002 2h12a2 2 0 002-2V8.24z"/>
+      </svg>
+      <span class="page-title">Contact</span>
+    </button>
     </div>
   </nav>
 
@@ -36,8 +50,8 @@
   <header class="page-header">
     <div class="header-content">
       <div class="logo-section">
-        <img src="assets/logo.jpg" alt="Logo" class="header-logo" />
-        <h1 class="header-name">Michel Lheriteau</h1>
+        <img src="assets/logos/logo.jpg" alt="Logo" class="header-logo" />
+        <h1 class="header-name">Portfolio</h1>
       </div>
     </div>
   </header>
@@ -50,7 +64,7 @@
   </main>
 
   <footer class="page-footer">
-    <div class="footer-left-spacer"></div> <!-- Fantôme pour centrer le texte -->
+    <div class="footer-left-spacer"></div>
     <p class="footer-text">2025 - Tous droits réservés</p>
     <div class="footer-links">
       <a href="https://github.com/Mlheriteau" target="_blank" class="footer-link">
@@ -70,6 +84,43 @@
     </div>
   </footer>
 
+<!-- Mobile bottom navigation -->
+<nav class="bottom-navigation">
+  <button class="page-button" (click)="openPage('home')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 3l9 8h-3v9h-12v-9h-3l9-8z"/>
+    </svg>
+    <span>Accueil</span>
+  </button>
+
+  <button class="page-button" (click)="openPage('about')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+    </svg>
+    <span>À propos</span>
+  </button>
+
+  <button class="page-button" (click)="openPage('skills')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22.7 19.3l-5.6-5.6a7.1 7.1 0 01-9.8-9.8l5.6 5.6 2.8-2.8-5.6-5.6a7.1 7.1 0 019.8 9.8l5.6 5.6-2.8 2.8z"/>
+    </svg>
+    <span>Compétences</span>
+  </button>
+
+  <button class="page-button" (click)="openPage('projects')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M10 4l2 2h8a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h6z"/>
+    </svg>
+    <span>Projets</span>
+  </button>
+
+  <button class="page-button" (click)="openPage('contact')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20 4H4a2 2 0 00-2 2v0.01l10 6.99 10-6.99V6a2 2 0 00-2-2zm0 4.24l-8.12 5.67a1 1 0 01-1.16 0L4 8.24V18a2 2 0 002 2h12a2 2 0 002-2V8.24z"/>
+    </svg>
+    <span>Contact</span>
+  </button>
+</nav>
 
   <div class="page-shadow" [class.visible]="isPageOpen"></div>
 </div>
