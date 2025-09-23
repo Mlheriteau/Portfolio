@@ -1,11 +1,13 @@
 {
   "name": "portfolio",
   "version": "0.0.0",
-  "scripts": {
-    "start": "ng serve",
-    "build": "ng build --configuration=production",
-    "vercel-build": "npm run build"
-  },
+"scripts": {
+  "prestart": "node set-env.js",
+  "start": "ng serve",
+  "prebuild": "node set-env.js",
+  "build": "ng build --configuration=production",
+  "vercel-build": "npm run build"
+},
   "prettier": {
     "printWidth": 100,
     "singleQuote": true,
