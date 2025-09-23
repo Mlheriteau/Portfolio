@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.0.0",
   "scripts": {
+    "prebuild": "ts-node set-env.ts",
     "start": "ng serve",
     "build": "ng build --configuration=production",
     "vercel-build": "npm run build"
