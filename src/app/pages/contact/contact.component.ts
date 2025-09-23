@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import emailjs from 'emailjs-com';
-import { environment } from '../../../environments/environment';
+import emailjs from '@emailjs/browser';import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',

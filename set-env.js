@@ -3,11 +3,11 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-const targetPath = './src/environments/environment.ts';
+const targetPath = './src/environments/environment.prod.ts';
 
 const envConfigFile = `
 export const environment = {
-  production: false,
+  production: true,
   emailJsServiceId: '${process.env.EMAILJS_SERVICE_ID}',
   emailJsTemplateId: '${process.env.EMAILJS_TEMPLATE_ID}',
   emailJsPublicKey: '${process.env.EMAILJS_PUBLIC_KEY}'
@@ -15,4 +15,4 @@ export const environment = {
 `;
 
 fs.writeFileSync(targetPath, envConfigFile, { encoding: 'utf-8' });
-console.log('✅ environment.ts généré avec succès');
+console.log('✅ environment.prod.ts généré avec succès');
