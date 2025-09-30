@@ -1,9 +1,11 @@
 .contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #ffffff;
-  font-size: 3rem;
+  text-transform: uppercase;
   text-align: center;
-  text-decoration: underline;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .contact-container {
@@ -27,22 +29,34 @@
   color: #ffffff;
   z-index: 2;
 
-  p {
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-size: 1.4rem;
     margin-bottom: 1rem;
     word-break: break-word;
   }
 
-a.mail-link {
-  text-decoration: underline;
-  cursor: pointer;
-  color: #ffffff;
-  transition: color 0.3s;
-
-  &:hover {
-    color: #0051ff;
+  svg.icon {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
   }
-}
+
+  a.mail-link,
+  a.phone-link,
+  a.form-link {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #74b9ff;
+    transition: color 0.3s, transform 0.2s;
+
+    &:hover {
+      color: #0051ff;
+      transform: scale(1.05);
+    }
+  }
 
   .contact-buttons {
     display: flex;
@@ -52,7 +66,7 @@ a.mail-link {
     flex-wrap: nowrap;
   }
 
-  a.contact-btn {
+  .contact-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -62,19 +76,17 @@ a.mail-link {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
-    flex: 0 0 auto;
     min-width: 140px;
+    transition: all 0.3s ease;
 
     svg {
       width: 20px;
       height: 20px;
-      fill: currentColor;
     }
 
     &:hover {
       background: #1e40af;
-      transform: translateY(-2px);
+      transform: scale(1.1);
     }
   }
 }
@@ -90,7 +102,6 @@ a.mail-link {
   h1 {
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
-    text-decoration: underline;
     color: #ffffff;
     text-align: center;
   }
@@ -119,7 +130,7 @@ a.mail-link {
     }
 
     button {
-      background: #16a34a;
+      background: #2563eb;
       color: #fff;
       font-weight: 600;
       padding: 0.75rem 1.5rem;
@@ -129,17 +140,21 @@ a.mail-link {
       font-size: 1rem;
       transition: all 0.3s ease;
       align-self: center;
+    }
 
-      &:hover {
-        background: #15803d;
-        transform: scale(1.05);
-      }
+    button:hover {
+      background: #1e40af;
+      transform: scale(1.05);
+    }
+
+    button.sent {
+      background: #16a34a;
+      cursor: default;
+      transform: none;
     }
   }
 }
 
-
-/* Responsive */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;

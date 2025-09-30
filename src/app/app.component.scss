@@ -21,10 +21,14 @@
 
 .left-navigation {
   position: absolute;
-  left: -300px;
+  left: -25vw;
   top: 0;
-  width: 300px;
-  height: 100vh;
+  width: 25vw;
+  max-width: 300px;
+  min-width: 200px;
+  height: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
   background: linear-gradient(135deg, #1a252f00, #2c3e509f);
   padding: 2rem;
   display: flex;
@@ -33,6 +37,20 @@
   box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
   z-index: 200;
   transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Scrollbar stylée */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
 
   &.visible {
     left: 0;
@@ -99,15 +117,14 @@
     transform: translateX(10px);
   }
 
-// Icon size (desktop same as mobile) //
+  // Icon size (desktop same as mobile) //
   .icon {
     width: 22px;
     height: 22px;
     margin-bottom: 0.2rem;
-    flex-shrink: 0; // prevents the icon from shrinking
+    flex-shrink: 0;
   }
 }
-
 
 .page-number {
   background: rgba(255, 255, 255, 0.1);
@@ -123,7 +140,6 @@
   font-size: 1.1rem;
 }
 
-// NAV INDICATOR //
 .nav-indicator {
   position: absolute;
   left: 0;
@@ -142,20 +158,28 @@
     transform: translateY(-50%) translateX(0);
   }
 
-  .indicator-line {
-    width: 3px;
-    height: 30px;
-    background: linear-gradient(to bottom, #4a90e2, #74b9ff);
-    margin: 0 auto 0.5rem;
-    border-radius: 2px;
+  .nav-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
   }
 
   .indicator-text {
     color: #ecf0f1;
     font-size: 0.8rem;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
     letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+  }
+
+  .indicator-line {
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(to right, #4a90e2, #74b9ff);
+    border-radius: 2px;
+    margin: 4px 0;
+    margin-left: 2px;
   }
 }
 
@@ -173,9 +197,13 @@
   .header-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .logo-section {
       display: flex;
+      flex-direction: row;
       align-items: center;
       gap: 1rem;
 
@@ -184,6 +212,12 @@
         height: 50px;
         border-radius: 50%;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
 
       .header-name {
@@ -246,21 +280,22 @@
   }
 
   .footer-link {
-    color: #bdc3c7;
+    background: #2563eb;
+    color: #fff;
     text-decoration: none;
+    font-weight: 600;
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    background: rgba(115, 110, 110, 0.436);
+
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
 
     &:hover {
-      color: #74b9ff;
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
+    background: #1e40af;
+    transform: scale(1.1);
     }
 
     svg {
@@ -285,7 +320,6 @@
   }
 }
 
-// SHADOW (desktop only) //
 .page-shadow {
   position: absolute;
   top: 0;
@@ -313,8 +347,9 @@
   }
 }
 
-@media (max-width: 768px) {
-  /* Hide the entire side menu and its elements on mobile */
+// RESPONSIVE BREAKPOINTS //
+@media (max-width: 1024px) {
+  /* Hide the entire side menu and its elements on tablet portrait + mobile */
   .left-navigation,
   .nav-trigger,
   .nav-indicator,

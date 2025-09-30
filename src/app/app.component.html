@@ -43,23 +43,25 @@
   </nav>
 
   <div class="nav-indicator" [class.visible]="!isNavVisible">
-    <div class="indicator-line"></div>
     <span class="indicator-text">Menu</span>
+    <div class="indicator-line"></div>
+    <div class="indicator-line"></div>
+    <div class="indicator-line"></div>
   </div>
 
-  <header class="page-header">
-    <div class="header-content">
-<div class="logo-section">
-  <img 
-    src="assets/logos/logo.jpg" 
-    alt="Logo" 
-    class="header-logo cursor-pointer hover:scale-105 transition-transform"
-    (click)="openPage('home')"/>
-  <h1 class="header-name">Portfolio</h1>
-</div>
-
+<header class="page-header">
+  <div class="header-content">
+    <div class="logo-section">
+      <img 
+        src="assets/logos/logo.jpg" 
+        alt="Logo" 
+        class="header-logo"
+        (click)="openPage('home')"
+      />
+      <h1 class="header-name">Portfolio Michel Lheriteau</h1>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- MAIN SCROLLABLE -->
   <main class="main-content">

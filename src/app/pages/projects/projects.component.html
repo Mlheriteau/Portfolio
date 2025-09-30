@@ -1,12 +1,12 @@
 <div class="projects-container">
-  <h1>Projets</h1>
+  <h1 class="project-title">Projets</h1>
 
   <!-- Project Portfolio -->
   <div class="project">
     <img src="assets/photo_projets/photo_Portfolio.png" alt="Aperçu du projet Portfolio" class="project-image" />
     <h2>Portfolio</h2>
-    <h4 class="font-semibold text-indigo-300">Mon site personnel</h4>
-    <span class="status">(Projet personnel)</span>
+    <h4 class="font-semibold text-300">Portfolio Angular</h4>
+    <span class="status">( Projet personnel )</span>
     <p>
       Création de mon portfolio en ligne<br />
       Présentation de mes projets et de mon parcours<br />
@@ -22,15 +22,23 @@
   <div class="project">
     <img src="assets/photo_projets/photo_en_travaux.jpg" alt="Aperçu du projet Le site de la Tech" class="project-image" />
     <h2>Le site de la Tech</h2>
-    <h4 class="font-semibold text-indigo-300">Site E-Commerce de produits Tech</h4>
-    <span class="status">(En cours de développement)</span>
+    <h4 class="font-semibold text-300">Site E-Commerce de produits Tech</h4>
+    <span class="status">( En cours de développement )</span>
     <p>
       Développement du backend et frontend<br />
       Gestion du responsive de l’application
     </p>
     <h3>Technos : Angular, DrawSQL, SQLite, Miro, Figma, GitHub</h3>
     <div class="project-links">
-      <a href="https://github.com/Mlheriteau/site-tech" target="_blank" class="btn-link">Voir le code</a>
+      <a href="javascript:void(0)" class="btn-link" (click)="showPopup()">Voir le code</a>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div *ngIf="popupVisible" class="popup-overlay">
+    <div class="popup">
+      <p>Projet en cours de réalisation 🚧</p>
+      <button class="close-btn" (click)="closePopup()">Fermer</button>
     </div>
   </div>
 
@@ -38,8 +46,8 @@
   <div class="project">
     <img src="assets/photo_projets/photo_adalicious.png" alt="Aperçu du projet Adalicious" class="project-image" />
     <h2>Adalicious</h2>
-    <h4 class="font-semibold text-indigo-300">Application de gestion de commandes en temps réel</h4>
-    <span class="status">(Kata de 3 heures)</span>
+    <h4 class="font-semibold text-300">Application de gestion de commandes en temps réel</h4>
+    <span class="status">( Kata )</span>
     <p>
       Application de gestion de commandes en temps réel<br />
       Développement du backend et frontend
@@ -54,8 +62,8 @@
   <div class="project">
     <img src="assets/photo_projets/photo_timer.png" alt="Aperçu du projet d'extension Take a break" class="project-image" />
     <h2>Take a Break</h2>
-    <h4 class="font-semibold text-indigo-300">Extension de navigateur</h4>
-    <span class="status">(Projet de 2 semaines en équipe de 3 personnes)</span>
+    <h4 class="font-semibold text-300">Extension de navigateur</h4>
+    <span class="status">( Projet de 2 semaines en équipe de 3 personnes )</span>
     <p>
       Extension Chrome/Firefox/Edge<br />
       Timer de gestion de temps de travail et de pause.<br />
@@ -72,8 +80,8 @@
   <div class="project">
     <img src="assets/photo_projets/photo_sncf_app.png" alt="Aperçu du projet SNCF App" class="project-image" />
     <h2>SNCF</h2>
-    <h4 class="font-semibold text-indigo-300">Application web de visualisation de données</h4>
-    <span class="status">(Projet de 2 semaines en équipe de 3 personnes)</span>
+    <h4 class="font-semibold text-300">Application web de visualisation de données</h4>
+    <span class="status">( Projet de 2 semaines en équipe de 3 personnes )</span>
     <p>
       Application proposant des trajets en train<br />
       Gestion du responsive de l’application
@@ -88,8 +96,8 @@
   <div class="project">
     <img src="assets/photo_projets/photo_App_Surf.png" alt="Aperçu du projet Surf App" class="project-image" />
     <h2>Spot Surf App</h2>
-    <h4 class="font-semibold text-indigo-300">Application Android et iOS</h4>
-    <span class="status">(Projet de 4 semaines en équipe de 4 personnes)</span>
+    <h4 class="font-semibold text-300">Application Android et iOS</h4>
+    <span class="status">( Projet de 4 semaines en équipe de 4 personnes )</span>
     <p>
       Application mobile de recherche de spots de surf<br />
       Gestion des spots de surf<br />
@@ -100,4 +108,19 @@
       <a href="https://github.com/Mlheriteau/SpotSurfApp" target="_blank" class="btn-link">Voir le code</a>
     </div>
   </div>
+
+<div class="competences-footer-links">
+  <a href="https://github.com/Mlheriteau" target="_blank" class="footer-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.304-5.467-1.333-5.467-5.933 0-1.31.467-2.38 1.235-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 0 1 3-.404c1.02.004 2.045.138 3 .404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.807 5.625-5.48 5.921.43.372.823 1.103.823 2.222 0 1.606-.014 2.903-.014 3.296 0 .322.218.694.825.576C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+    </svg>
+    GitHub
+  </a>
+
+  <a href="https://linkedin.com/in/michel-lheriteau" target="_blank" class="footer-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.024-3.037-1.851-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.367-1.85 3.602 0 4.269 2.37 4.269 5.451v6.29zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.206 24 24 23.226 24 22.271V1.729C24 .774 23.206 0 22.225 0z"/>
+    </svg>
+    LinkedIn
+  </a>
 </div>
