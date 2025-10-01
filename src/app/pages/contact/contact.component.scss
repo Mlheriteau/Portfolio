@@ -1,3 +1,8 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .contact-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -13,15 +18,18 @@
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-  padding: 0 2rem 6rem 2rem;
+  padding: 0 1rem 6rem 1rem;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-info {
   flex: 0 1 55%;
-  min-width: 350px;
+  min-width: 300px;
+  max-width: 100%;
   background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 12px;
@@ -63,7 +71,7 @@
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 
   .contact-btn {
@@ -76,7 +84,7 @@
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    min-width: 140px;
+    min-width: 120px;
     transition: all 0.3s ease;
 
     svg {
@@ -93,14 +101,15 @@
 
 .contact-form-container {
   flex: 0 1 55%;
-  min-width: 350px;
+  min-width: 300px;
+  max-width: 100%;
   background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     margin-bottom: 1.5rem;
     color: #ffffff;
     text-align: center;
@@ -159,21 +168,24 @@
   .contact-container {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   .contact-info,
   .contact-form-container {
     flex: 0 1 100%;
-    min-width: auto;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .contact-buttons {
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   a.contact-btn {
     flex: 0 0 auto;
-    min-width: 140px;
+    min-width: 120px;
   }
 }
