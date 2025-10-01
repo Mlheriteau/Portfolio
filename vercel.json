@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "package.json",
@@ -9,9 +8,9 @@
       }
     }
   ],
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
