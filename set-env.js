@@ -1,10 +1,8 @@
 const { writeFileSync } = require('fs');
 const { join } = require('path');
 
-// Chemin absolu vers le fichier environment.prod.ts
 const targetPath = join(__dirname, 'src', 'environments', 'environment.prod.ts');
 
-// Vérifie si les variables d'environnement sont définies
 const requiredEnvVars = ['EMAILJS_SERVICE_ID', 'EMAILJS_TEMPLATE_ID', 'EMAILJS_PUBLIC_KEY'];
 requiredEnvVars.forEach((key) => {
   if (!process.env[key]) {
