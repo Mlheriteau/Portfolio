@@ -31,7 +31,7 @@
               }
             ],
             "styles": ["src/styles.scss"],
-            "outputPath": "dist/portfolio/browser"
+            "outputPath": "dist/portfolio"
           },
           "configurations": {
             "production": {
