@@ -232,6 +232,7 @@
 .main-content {
   flex: 1;
   overflow-y: auto;
+  height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
   align-items: flex-start;

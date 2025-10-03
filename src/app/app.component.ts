@@ -1,7 +1,7 @@
-// Root component of the Angular application
-import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,25 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class App {
+export class App implements AfterViewInit {
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+
   isPageOpen = false;
   animationState = 'closed';
   currentPage = '';
   isNavVisible = false;
 
   constructor(private router: Router) {}
+
+  ngAfterViewInit() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        if (this.scrollContainer?.nativeElement) {
+          this.scrollContainer.nativeElement.scrollTop = 0; // returns to the top with each navigation
+        }
+      });
+  }
 
   openPage(route: string) {
     this.currentPage = route;
